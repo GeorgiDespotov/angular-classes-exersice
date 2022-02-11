@@ -262,17 +262,65 @@ export class Melolemonmelon extends Earthmelon {
 }
 
 let wMelon = new Watermelon(2, 'on');
-console.log(wMelon.toString());
+// console.log(wMelon.toString());
 
 const morphMelon = new Melolemonmelon(5, 'Pulp');
-console.log(morphMelon.toString());
-console.log(morphMelon.toString());
-console.log(morphMelon.toString());
-console.log(morphMelon.toString());
-console.log(morphMelon.toString());
+// console.log(morphMelon.toString());
+// console.log(morphMelon.toString());
+// console.log(morphMelon.toString());
+// console.log(morphMelon.toString());
+// console.log(morphMelon.toString());
 
 
 
+class Box<T> {
+
+    public content: Array<any>;
+
+    constructor() {
+        this.content = [];
+    }
+
+    public add(el: T): void {
+        this.content.push(el);
+    }
+
+    public remove(): void {
+        this.content.pop();
+    }
+
+    public getCount() {
+        return this.content.length;
+    }
+}
+
+let box = new Box<String>();
+box.add("Pesho");
+box.add("Gosho");
+// console.log(box.getCount());
+box.remove();
+// console.log(box.getCount());
+
+
+
+class KeyValuePairs<T, U> {
+
+    private key: T;
+    private value: U;
+
+    setKeyVal(key: T, value: U): void {
+        this.key = key;
+        this.value = value;
+    }
+
+    display(): void {
+        console.log(`key = ${this.key}, value = ${this.value}`);
+    }
+}
+
+const test = new KeyValuePairs<string, number>();
+test.setKeyVal('Pesho', 34);
+console.log(test.display());
 
 
 

@@ -231,10 +231,46 @@ var Melolemonmelon = /** @class */ (function (_super) {
 }(Earthmelon));
 exports.Melolemonmelon = Melolemonmelon;
 var wMelon = new Watermelon(2, 'on');
-console.log(wMelon.toString());
+// console.log(wMelon.toString());
 var morphMelon = new Melolemonmelon(5, 'Pulp');
-console.log(morphMelon.toString());
-console.log(morphMelon.toString());
-console.log(morphMelon.toString());
-console.log(morphMelon.toString());
-console.log(morphMelon.toString());
+// console.log(morphMelon.toString());
+// console.log(morphMelon.toString());
+// console.log(morphMelon.toString());
+// console.log(morphMelon.toString());
+// console.log(morphMelon.toString());
+var Box = /** @class */ (function () {
+    function Box() {
+        this.content = [];
+    }
+    Box.prototype.add = function (el) {
+        this.content.push(el);
+    };
+    Box.prototype.remove = function () {
+        this.content.pop();
+    };
+    Box.prototype.getCount = function () {
+        return this.content.length;
+    };
+    return Box;
+}());
+var box = new Box();
+box.add("Pesho");
+box.add("Gosho");
+// console.log(box.getCount());
+box.remove();
+// console.log(box.getCount());
+var KeyValuePairs = /** @class */ (function () {
+    function KeyValuePairs() {
+    }
+    KeyValuePairs.prototype.setKeyVal = function (key, value) {
+        this.key = key;
+        this.value = value;
+    };
+    KeyValuePairs.prototype.display = function () {
+        console.log("key = ".concat(this.key, ", value = ").concat(this.value));
+    };
+    return KeyValuePairs;
+}());
+var test = new KeyValuePairs();
+test.setKeyVal('Pesho', 34);
+console.log(test.display());
